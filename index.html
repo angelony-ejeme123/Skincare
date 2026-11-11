@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f5ef">
+  <meta name="description" content="Meet GlowNest: gentle everyday skincare, thoughtfully introduced in this fictional copywriting portfolio concept.">
+  <title>GlowNest Skincare — A little more ease in your routine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --cream: #f8f5ef;
+      --paper: #fffdfa;
+      --sand: #eee7dc;
+      --blush: #ead4cc;
+      --rose: #c78878;
+      --brown: #493a32;
+      --muted: #81736b;
+      --line: rgba(73, 58, 50, .15);
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--brown);
+      font: 400 15px/1.7 var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    img { display: block; max-width: 100%; }
+    .wrap { width: min(1180px, calc(100% - 64px)); margin-inline: auto; }
+    .eyebrow {
+      margin: 0 0 16px;
+      color: var(--rose);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 400; }
+    h1 { font-size: clamp(48px, 6vw, 78px); letter-spacing: -.045em; line-height: 1.08; }
+    h2 { font-size: clamp(36px, 4vw, 54px); letter-spacing: -.035em; line-height: 1.17; }
+    h3 { font-size: 26px; letter-spacing: -.025em; line-height: 1.25; }
+    .button {
+      display: inline-flex;
+      min-height: 52px;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      padding: 0 23px;
+      border: 1px solid var(--brown);
+      border-radius: 2px;
+      background: var(--brown);
+      color: #fffdfa;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .06em;
+      transition: background .22s ease, color .22s ease, transform .22s ease;
+    }
+    .button:hover { transform: translateY(-2px); background: transparent; color: var(--brown); }
+    .button .arrow { font-size: 17px; line-height: 1; }
+
+    .announcement {
+      padding: 8px 20px;
+      background: var(--brown);
+      color: #fffdfa;
+      text-align: center;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+    header {
+      position: relative;
+      z-index: 2;
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      display: flex;
+      min-height: 82px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .wordmark {
+      font-family: var(--serif);
+      font-size: 28px;
+      letter-spacing: -.055em;
+    }
+    .wordmark span { color: var(--rose); }
+    .nav-links { display: flex; align-items: center; gap: 35px; }
+    .nav-links a {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .09em;
+      transition: color .2s ease;
+    }
+    .nav-links a:hover { color: var(--rose); }
+    .nav-cta { padding-bottom: 5px; border-bottom: 1px solid var(--brown); }
+
+    .hero {
+      display: grid;
+      min-height: 650px;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 7%;
+      padding-block: 62px 78px;
+    }
+    .hero-copy { max-width: 500px; padding-left: 4%; }
+    .hero-copy h1 { max-width: 540px; margin-bottom: 22px; }
+    .hero-copy h1 em { color: var(--rose); font-weight: 400; }
+    .hero-copy > p:not(.eyebrow) { max-width: 420px; margin-bottom: 31px; color: var(--muted); font-size: 15px; }
+    .hero-note { display: flex; align-items: center; gap: 12px; margin-top: 40px; color: var(--muted); font-size: 10px; letter-spacing: .05em; }
+    .hero-note::before { width: 28px; height: 1px; background: var(--rose); content: ""; }
+    .hero-art {
+      position: relative;
+      min-height: 500px;
+      background: var(--sand);
+    }
+    .hero-art img { width: 100%; height: 500px; object-fit: cover; object-position: center 54%; }
+    .hero-art::after {
+      position: absolute;
+      z-index: 0;
+      top: 21px;
+      right: -21px;
+      bottom: -21px;
+      left: 21px;
+      border: 1px solid rgba(199, 136, 120, .6);
+      content: "";
+      pointer-events: none;
+    }
+    .hero-label {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      max-width: 215px;
+      padding: 16px 19px;
+      background: var(--paper);
+      font-family: var(--serif);
+      font-size: 18px;
+      line-height: 1.35;
+    }
+    .hero-label small { display: block; margin-top: 6px; color: var(--muted); font: 9px/1.5 var(--sans); letter-spacing: .14em; text-transform: uppercase; }
+
+    .project-card {
+      display: grid;
+      grid-template-columns: 1.1fr repeat(4, 1fr);
+      gap: 25px;
+      align-items: center;
+      padding: 24px 30px;
+      border: 1px solid var(--line);
+      background: rgba(255, 253, 250, .55);
+    }
+    .project-title { font-family: var(--serif); font-size: 18px; line-height: 1.3; }
+    .project-item span { display: block; margin-bottom: 4px; color: var(--rose); font-size: 8px; font-weight: 700; letter-spacing: .17em; text-transform: uppercase; }
+    .project-item strong { font-size: 10px; font-weight: 500; line-height: 1.5; }
+
+    .intro {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 13%;
+      align-items: start;
+      padding-block: 144px 132px;
+    }
+    .intro-aside { padding-top: 8px; }
+    .intro-aside p { max-width: 260px; color: var(--muted); font-size: 12px; }
+    .intro-copy h2 { max-width: 670px; margin-bottom: 24px; }
+    .intro-copy > p { max-width: 620px; color: var(--muted); font-size: 14px; }
+    .text-link { display: inline-flex; gap: 12px; align-items: center; margin-top: 14px; padding-bottom: 5px; border-bottom: 1px solid var(--rose); font-size: 10px; font-weight: 700; letter-spacing: .08em; }
+    .text-link span { color: var(--rose); font-size: 17px; transition: transform .2s ease; }
+    .text-link:hover span { transform: translateX(4px); }
+
+    .benefits { padding-block: 78px 90px; background: #eee8df; }
+    .section-heading { max-width: 640px; margin: 0 auto 48px; text-align: center; }
+    .section-heading h2 { margin-bottom: 15px; }
+    .section-heading > p:last-child { color: var(--muted); font-size: 13px; }
+    .benefit-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
+    .benefit {
+      min-height: 215px;
+      padding: 31px 25px 20px;
+      border-right: 1px solid var(--line);
+    }
+    .benefit:last-child { border-right: 0; }
+    .benefit-number { color: var(--rose); font-family: var(--serif); font-size: 19px; }
+    .benefit h3 { margin: 24px 0 10px; font-size: 22px; }
+    .benefit p { max-width: 230px; margin-bottom: 0; color: var(--muted); font-size: 11px; line-height: 1.75; }
+
+    .products { padding-block: 130px 145px; }
+    .products-top { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 43px; }
+    .products-top h2 { max-width: 500px; margin: 0; }
+    .products-top > p { max-width: 280px; margin: 0 0 6px; color: var(--muted); font-size: 12px; }
+    .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .product-photo { position: relative; overflow: hidden; background: var(--sand); }
+    .product-photo img { width: 100%; aspect-ratio: 1 / 1.12; object-fit: cover; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+    .product-card:hover .product-photo img { transform: scale(1.035); }
+    .product-tag { position: absolute; top: 15px; left: 15px; padding: 7px 10px; background: rgba(255,253,250,.9); font-size: 8px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .product-info { display: flex; justify-content: space-between; gap: 14px; align-items: baseline; margin: 18px 0 7px; }
+    .product-info h3 { margin: 0; font-size: 23px; }
+    .product-info span { flex: 0 0 auto; color: var(--rose); font-family: var(--serif); font-size: 13px; }
+    .product-card > p { max-width: 340px; margin: 0; color: var(--muted); font-size: 11px; line-height: 1.75; }
+
+    .why {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 9%;
+      padding-block: 82px;
+      background: #e8d8d0;
+    }
+    .why-image { min-height: 490px; background: var(--sand); }
+    .why-image img { width: 100%; height: 490px; object-fit: cover; object-position: center 48%; }
+    .why-copy { max-width: 470px; padding-right: 10%; }
+    .why-copy h2 { margin-bottom: 21px; }
+    .why-copy > p:not(.eyebrow) { margin-bottom: 17px; color: #71635b; font-size: 13px; }
+    .why-copy .text-link { margin-top: 10px; }
+
+    .quote {
+      padding-block: 113px 120px;
+      text-align: center;
+    }
+    .quote blockquote { max-width: 800px; margin: 0 auto; font: 400 clamp(30px, 4.2vw, 53px)/1.3 var(--serif); letter-spacing: -.03em; }
+    .quote blockquote em { color: var(--rose); font-weight: 400; }
+    .quote p:last-child { margin: 24px 0 0; color: var(--muted); font-size: 9px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+
+    .final-cta { padding: 83px 28px 90px; background: var(--brown); color: var(--paper); text-align: center; }
+    .final-cta .eyebrow { color: #d9a89a; }
+    .final-cta h2 { max-width: 700px; margin: 0 auto 15px; }
+    .final-cta > p:not(.eyebrow) { margin-bottom: 27px; color: #d4c7bf; font-size: 13px; }
+    .final-cta .button { border-color: var(--paper); background: var(--paper); color: var(--brown); }
+    .final-cta .button:hover { background: transparent; color: var(--paper); }
+    footer { padding-block: 25px; }
+    .footer-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; color: var(--muted); font-size: 9px; }
+    .footer-row p { margin: 0; }
+    .footer-mark { color: var(--brown); font-family: var(--serif); font-size: 18px; }
+
+    .reveal { animation: rise-in .8s both; }
+    @keyframes rise-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+    @media (max-width: 800px) {
+      .wrap { width: min(100% - 40px, 620px); }
+      .nav { min-height: 70px; }
+      .nav-links { gap: 20px; }
+      .nav-links a { font-size: 9px; }
+      .hero { min-height: auto; grid-template-columns: 1fr 1fr; gap: 5%; padding-block: 58px 75px; }
+      .hero-copy { padding-left: 0; }
+      .hero-art, .hero-art img { min-height: 420px; height: 420px; }
+      .project-card { grid-template-columns: repeat(2, 1fr); gap: 19px 24px; }
+      .intro { gap: 7%; padding-block: 105px; }
+      .benefit { padding-inline: 16px; }
+      .benefit h3 { font-size: 19px; }
+      .products { padding-block: 100px; }
+      .product-grid { gap: 14px; }
+      .product-info h3 { font-size: 19px; }
+      .why { gap: 6%; }
+      .why-image, .why-image img { min-height: 420px; height: 420px; }
+      .why-copy { padding-right: 8%; }
+    }
+    @media (max-width: 580px) {
+      .wrap { width: calc(100% - 40px); }
+      .announcement { font-size: 8px; }
+      .nav { min-height: 65px; }
+      .wordmark { font-size: 25px; }
+      .nav-links { gap: 15px; }
+      .nav-links a { font-size: 8px; letter-spacing: .04em; }
+      .nav-links a:nth-child(2) { display: none; }
+      .hero { grid-template-columns: 1fr; gap: 40px; padding-block: 58px 64px; }
+      h1 { font-size: clamp(47px, 13vw, 66px); }
+      .hero-copy { max-width: 430px; }
+      .hero-copy > p:not(.eyebrow) { max-width: 360px; }
+      .hero-art, .hero-art img { min-height: 390px; height: 390px; }
+      .hero-art { margin-right: 11px; }
+      .hero-art::after { top: 13px; right: -13px; bottom: -13px; left: 13px; }
+      .project-card { padding: 22px; gap: 17px 13px; }
+      .project-title { grid-column: 1 / -1; }
+      .project-item strong { font-size: 9px; }
+      .intro { grid-template-columns: 1fr; gap: 25px; padding-block: 90px; }
+      .intro-aside p { max-width: 360px; }
+      .benefits { padding-block: 70px; }
+      .section-heading { margin-bottom: 30px; }
+      .benefit-grid { grid-template-columns: 1fr 1fr; }
+      .benefit { min-height: 200px; padding: 24px 14px; border-bottom: 1px solid var(--line); }
+      .benefit:nth-child(2) { border-right: 0; }
+      .benefit:nth-child(n+3) { border-bottom: 0; }
+      .benefit h3 { margin-top: 17px; }
+      .products { padding-block: 85px; }
+      .products-top { display: block; margin-bottom: 30px; }
+      .products-top > p { margin-top: 14px; }
+      .product-grid { grid-template-columns: 1fr; gap: 33px; }
+      .product-photo img { aspect-ratio: 1 / .86; }
+      .why { grid-template-columns: 1fr; gap: 35px; padding-block: 55px 70px; }
+      .why-image, .why-image img { min-height: 360px; height: 360px; }
+      .why-copy { padding: 0; }
+      .quote { padding-block: 85px; }
+      .final-cta { padding-block: 72px 78px; }
+      .footer-row { align-items: flex-start; flex-direction: column; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="announcement">A softer start to your everyday routine</div>
+  <header>
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="wordmark" href="#home" aria-label="GlowNest home">glow<span>nest</span></a>
+      <div class="nav-links">
+        <a href="#story">OUR APPROACH</a>
+        <a href="#products">THE ESSENTIALS</a>
+        <a class="nav-cta" href="#collection">DISCOVER GLOWNEST</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero wrap" id="home">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Everyday care, made a little easier</p>
+        <h1>Healthy Skin Starts With the <em>Right Care.</em></h1>
+        <p>Discover skincare essentials designed to make your everyday routine simple, gentle and effective.</p>
+        <a class="button" href="#products">Explore Our Products <span class="arrow" aria-hidden="true">→</span></a>
+        <div class="hero-note">A thoughtful routine, one small step at a time</div>
+      </div>
+      <div class="hero-art">
+        <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=1100&q=85" alt="An amber skincare bottle in the warm morning light">
+        <div class="hero-label">Make room for a little care.<small>Your routine can start here</small></div>
+      </div>
+    </section>
+
+    <section class="project-card wrap" aria-label="Portfolio project overview">
+      <div class="project-title">A closer look at the project</div>
+      <div class="project-item"><span>Project</span><strong>GlowNest Skincare Landing Page</strong></div>
+      <div class="project-item"><span>Project type</span><strong>Copywriting</strong></div>
+      <div class="project-item"><span>Client</span><strong>Fictional Brand · Portfolio Concept</strong></div>
+      <div class="project-item"><span>My role</span><strong>Copywriter</strong></div>
+    </section>
+
+    <section class="intro wrap" id="story">
+      <div class="intro-aside">
+        <p class="eyebrow">A gentler kind of everyday</p>
+        <p>Good skincare doesn't need to feel like one more thing on your to-do list.</p>
+      </div>
+      <div class="intro-copy">
+        <h2>Care for your skin. Keep it simple.</h2>
+        <p>Some days, your routine is a slow morning. Other days, it's a quick cleanse before you head out the door. Both count. GlowNest is a fictional skincare brand built around making everyday care feel less complicated—and a little more like you.</p>
+        <p>Start with the basics, make space to notice what your skin needs, and build from there. No perfect routine required.</p>
+        <a class="text-link" href="#benefits">A thoughtful approach to skin <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <section class="benefits" id="benefits">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">The GlowNest point of view</p>
+          <h2>Less guesswork. More feel-good care.</h2>
+          <p>A few thoughtful essentials can make your routine easier to come back to.</p>
+        </div>
+        <div class="benefit-grid">
+          <article class="benefit">
+            <span class="benefit-number">01</span>
+            <h3>Everyday, by design</h3>
+            <p>Easy-to-reach-for essentials that fit into real mornings, real evenings and all the in-between.</p>
+          </article>
+          <article class="benefit">
+            <span class="benefit-number">02</span>
+            <h3>A gentle approach</h3>
+            <p>Comfort comes first. Choose options that feel considered and right for the way you like to care for your skin.</p>
+          </article>
+          <article class="benefit">
+            <span class="benefit-number">03</span>
+            <h3>Simple steps</h3>
+            <p>Keep your routine easy to follow, with familiar essentials you can make your own.</p>
+          </article>
+          <article class="benefit">
+            <span class="benefit-number">04</span>
+            <h3>Room for your needs</h3>
+            <p>Skin isn't one-size-fits-all. Get to know yours and choose products that suit your preferences.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="products wrap" id="products">
+      <div class="products-top">
+        <div>
+          <p class="eyebrow">Your everyday edit</p>
+          <h2>Meet the feel-good basics.</h2>
+        </div>
+        <p>Three easy places to begin. Find the ones that fit your day, then make the routine your own.</p>
+      </div>
+      <div class="product-grid">
+        <article class="product-card">
+          <div class="product-photo">
+            <img src="https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=900&q=85" alt="A bottle of gentle facial cleanser beside soft towels">
+            <span class="product-tag">The first step</span>
+          </div>
+          <div class="product-info"><h3>Daily Gentle Cleanser</h3><span>01 / Cleanse</span></div>
+          <p>A fresh start for your routine. This everyday cleanser makes washing up feel like a small, welcome reset.</p>
+        </article>
+        <article class="product-card">
+          <div class="product-photo">
+            <img src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=900&q=85" alt="A minimal glass dropper bottle styled with soft botanical details">
+            <span class="product-tag">A little extra care</span>
+          </div>
+          <div class="product-info"><h3>Hydrating Face Serum</h3><span>02 / Layer</span></div>
+          <p>A considered addition for the moments you want another layer in your routine. Smooth it on at your own pace.</p>
+        </article>
+        <article class="product-card">
+          <div class="product-photo">
+            <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=900&q=85" alt="An amber skincare bottle styled in natural light">
+            <span class="product-tag">The daily finish</span>
+          </div>
+          <div class="product-info"><h3>Daily Moisturizer</h3><span>03 / Moisturize</span></div>
+          <p>A simple finishing touch for morning or evening. Make it part of your routine whenever it feels right for you.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="why">
+      <div class="why-image">
+        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1100&q=85" alt="A person receiving a relaxing facial treatment">
+      </div>
+      <div class="why-copy">
+        <p class="eyebrow">A little note on choosing well</p>
+        <h2>Your skin is yours. Your routine can be, too.</h2>
+        <p>It can be tempting to follow every new tip or add one more step. But skincare is personal. What feels comfortable for someone else may not be what feels right for you.</p>
+        <p>Take time to notice how your skin feels, keep your routine manageable and choose products with your own needs in mind. And if you're not sure where to start, a qualified skincare professional can help you find your way.</p>
+        <a class="text-link" href="#collection">Find your everyday essentials <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <section class="quote wrap" aria-label="Brand philosophy">
+      <p class="eyebrow">The little things add up</p>
+      <blockquote>“Your routine doesn't have to be perfect. It just has to feel like <em>yours.</em>”</blockquote>
+      <p>The GlowNest way</p>
+    </section>
+
+    <section class="final-cta" id="collection">
+      <p class="eyebrow">A good place to begin</p>
+      <h2>Ready to Give Your Skin the Care It Deserves?</h2>
+      <p>Start building a routine that works for you.</p>
+      <a class="button" href="#products">Explore the GlowNest Collection <span class="arrow" aria-hidden="true">→</span></a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-row wrap">
+      <a class="footer-mark" href="#home">glownest</a>
+      <p>GlowNest Skincare · A fictional brand portfolio concept</p>
+      <p>Project objective: brand introduction, product promotion &amp; customer engagement</p>
+    </div>
+  </footer>
+</body>
+</html>
